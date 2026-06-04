@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node scripts/gen-favicon.mjs public)",
+      "Bash(cp public/favicon.ico public/favicon.svg public/apple-touch-icon.png dist/portfolio/browser/)",
+      "Bash(rm -f public/favicon-preview.png scripts/favicon.ico scripts/favicon.svg scripts/apple-touch-icon.png scripts/favicon-preview.png)",
+      "Bash(node -e \"const fs=require\\('fs'\\);const f='dist/portfolio/browser/index.html';let s=fs.readFileSync\\(f,'utf8'\\);const add='<link rel=\\\\\"icon\\\\\" type=\\\\\"image/x-icon\\\\\" href=\\\\\"favicon.ico\\\\\" sizes=\\\\\"any\\\\\"><link rel=\\\\\"icon\\\\\" type=\\\\\"image/svg+xml\\\\\" href=\\\\\"favicon.svg\\\\\"><link rel=\\\\\"apple-touch-icon\\\\\" href=\\\\\"apple-touch-icon.png\\\\\">';s=s.replace\\('<link rel=\\\\\"icon\\\\\" type=\\\\\"image/x-icon\\\\\" href=\\\\\"favicon.ico\\\\\">',add\\);fs.writeFileSync\\(f,s\\);console.log\\('updated, apple-touch present:',s.includes\\('apple-touch-icon'\\)\\);\")"
+    ]
+  }
+}
